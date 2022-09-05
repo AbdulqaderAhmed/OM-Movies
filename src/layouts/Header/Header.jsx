@@ -15,25 +15,13 @@ import {
   Button,
 } from "@mui/material";
 import { MenuOutlined } from "@mui/icons-material";
-import { makeStyles } from "@mui/styles";
 
 const drawerWidth = 240;
 const navItems = ["Trending", "Featured", "Top Movies", "Top Tv Shows"];
 
-const useStyles = makeStyles({
-  appbar: {
-    backgroundColor: "#1a237e",
-  },
-  drawer: {
-    backgroundColor: "#1a237e",
-    color: "#fefefe",
-  },
-});
-
 export default function Header(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const classes = useStyles();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -63,7 +51,7 @@ export default function Header(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <AppBar component="nav">
-        <Toolbar className={classes.appbar}>
+        <Toolbar>
           <IconButton
             color="inherit"
             aria-label="open drawer"

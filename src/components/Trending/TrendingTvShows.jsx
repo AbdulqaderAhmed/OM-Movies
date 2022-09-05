@@ -7,7 +7,6 @@ import {
 import React from "react";
 
 export default function TrendingTvShows({ trending }) {
-  const classes = useStyles();
   const imgPath = "https://image.tmdb.org/t/p/w500" + trending.poster_path;
   return (
     <Card>
