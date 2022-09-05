@@ -30,25 +30,23 @@ export default function TrendingTvShows({ apikey }) {
           autoplay={true}
           margin={12}
         >
-          {movie.length > 0 ? (
-            movie.map((movie, index) => {
-              return (
-                <Grid item key={index}>
-                  <Card>
-                    <CardMedia
-                      component="img"
-                      image={
-                        "https://image.tmdb.org/t/p/w500" + movie.poster_path
-                      }
-                      alt={movie.title}
-                    />
-                  </Card>
-                </Grid>
-              );
-            })
-          ) : (
-            <p>Loading...</p>
-          )}
+          {movie.length > 0
+            ? movie.map((movie, index) => {
+                return (
+                  <Grid item key={index}>
+                    <Card>
+                      <CardMedia
+                        component="img"
+                        image={
+                          "https://image.tmdb.org/t/p/w500" + movie.poster_path
+                        }
+                        alt={movie.title}
+                      />
+                    </Card>
+                  </Grid>
+                );
+              })
+            : null}
         </ReactOwlCarousel>
       </Grid>
     </>

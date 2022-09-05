@@ -30,25 +30,23 @@ export default function Trending({ apikey }) {
           autoplay={true}
           margin={12}
         >
-          {movies.length > 0 ? (
-            movies.map((movie, index) => {
-              return (
-                <Grid item key={index}>
-                  <Card>
-                    <CardMedia
-                      component="img"
-                      image={
-                        "https://image.tmdb.org/t/p/w500" + movie.poster_path
-                      }
-                      alt={movie.title}
-                    />
-                  </Card>
-                </Grid>
-              );
-            })
-          ) : (
-            <p>Loading...</p>
-          )}
+          {movies.length > 0
+            ? movies.map((movie, index) => {
+                return (
+                  <Grid item key={index}>
+                    <Card>
+                      <CardMedia
+                        component="img"
+                        image={
+                          "https://image.tmdb.org/t/p/w500" + movie.poster_path
+                        }
+                        alt={movie.title}
+                      />
+                    </Card>
+                  </Grid>
+                );
+              })
+            : null}
         </ReactOwlCarousel>
       </Grid>
     </>
