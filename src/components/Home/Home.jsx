@@ -12,7 +12,7 @@ export default function Home() {
       <Trending apikey={API_KEY} />
 
       {/* trending tv shows */}
-      {/* <TrendingTvShows apikey={API_KEY} /> */}
+      <TrendingTvShows apikey={API_KEY} />
     </>
   );
 }
