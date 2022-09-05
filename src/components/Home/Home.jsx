@@ -28,7 +28,7 @@ export default function Home() {
   useEffect(() => {
     fetchTrendingMovie();
     fetchTrendingTvShows();
-  });
+  }, []);
 
   return (
     <>
