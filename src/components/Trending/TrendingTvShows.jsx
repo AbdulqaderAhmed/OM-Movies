@@ -49,7 +49,6 @@ export default function TrendingTvShows({ apikey }) {
             : null}
         </ReactOwlCarousel>
       </Grid>
-      {console.log("log")}
     </>
   );
 }
