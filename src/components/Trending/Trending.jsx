@@ -15,7 +15,6 @@ export default function Trending({ apikey }) {
   useEffect(() => {
     fetchMovie();
   }, []);
-  console.log(movies);
 
   return (
     <>
@@ -31,7 +30,7 @@ export default function Trending({ apikey }) {
           autoplay={true}
           margin={12}
         >
-          {movies.length > 0
+          {movies
             ? movies.map((movie, index) => {
                 return (
                   <Grid item key={index}>

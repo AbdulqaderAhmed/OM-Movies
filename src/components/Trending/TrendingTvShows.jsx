@@ -4,11 +4,12 @@ import React, { useEffect, useState } from "react";
 import ReactOwlCarousel from "react-owl-carousel";
 
 export default function TrendingTvShows({ apikey }) {
-  const [movie, setMovies] = useState([]);
+  const [movies, setMovies] = useState([]);
   const urlTrendingTvShows = `https://api.themoviedb.org/3/trending/tv/day?api_key=${apikey}`;
 
   const fetchMovie = async () => {
     const res = await axios.get(urlTrendingTvShows);
+    console.log(res.data.results);
     setMovies(res.data.results);
   };
 
@@ -30,23 +31,22 @@ export default function TrendingTvShows({ apikey }) {
           autoplay={true}
           margin={12}
         >
-          {movie.length > 0
-            ? movie.map((movie, index) => {
-                return (
-                  <Grid item key={index}>
-                    <Card>
-                      <CardMedia
-                        component="img"
-                        image={
-                          "https://image.tmdb.org/t/p/w500" + movie.poster_path
-                        }
-                        alt={movie.title}
-                      />
-                    </Card>
-                  </Grid>
-                );
-              })
-            : null}
+          {movies &&
+            movies.map((movie, index) => {
+              return (
+                <Grid item key={index}>
+                  <Card>
+                    <CardMedia
+                      component="img"
+                      image={
+                        "https://image.tmdb.org/t/p/w500" + movie.poster_path
+                      }
+                      alt={movie.title}
+                    />
+                  </Card>
+                </Grid>
+              );
+            })}
         </ReactOwlCarousel>
       </Grid>
     </>
