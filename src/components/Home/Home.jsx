@@ -28,12 +28,12 @@ export default function Home() {
   useEffect(() => {
     fetchTrendingMovie();
     fetchTrendingTvShows();
-  }, []);
+  });
 
   return (
     <>
       {/* trending movies */}
-      <Typography variant="h4" component="h2" sx={{ mt: 10, mb: 2 }}>
+      <Typography variant="h4" component="h3" sx={{ mt: 10, mb: 2 }}>
         Trending Movies
       </Typography>
       <Grid container spacing={2}>
@@ -53,7 +53,7 @@ export default function Home() {
               );
             })
           ) : (
-            <p>loading...</p>
+            <p>Loading...</p>
           )}
         </ReactOwlCarousel>
       </Grid>
@@ -79,7 +79,7 @@ export default function Home() {
               );
             })
           ) : (
-            <p>loading...</p>
+            <p>Loading...</p>
           )}
         </ReactOwlCarousel>
       </Grid>
