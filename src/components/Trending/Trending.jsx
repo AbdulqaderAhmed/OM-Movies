@@ -5,7 +5,7 @@ import ReactOwlCarousel from "react-owl-carousel";
 
 export default function Trending({ apikey }) {
   const [movies, setMovies] = useState([]);
-  const urlTrendingMovie = `https://api.themoviedb.org/3/trending/tv/day?api_key=${apikey}`;
+  const urlTrendingMovie = `https://api.themoviedb.org/3/trending/movie/day?api_key=${apikey}`;
 
   const fetchMovie = async () => {
     const res = await axios.get(urlTrendingMovie);
@@ -15,6 +15,7 @@ export default function Trending({ apikey }) {
   useEffect(() => {
     fetchMovie();
   }, []);
+  console.log(movies);
 
   return (
     <>
