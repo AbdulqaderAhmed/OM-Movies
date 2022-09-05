@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <>
       {/* trending movies */}
-      <Typography variant="h4" component="h3" sx={{ mt: 10, mb: 2 }}>
+      <Typography variant="h5" component="h3" sx={{ mt: 10, mb: 2 }}>
         Trending Movies
       </Typography>
       <Grid container spacing={2}>
@@ -59,7 +59,7 @@ export default function Home() {
       </Grid>
 
       {/* trending tv shows */}
-      <Typography variant="h4" component="h2" sx={{ mt: 8, mb: 2 }}>
+      <Typography variant="h5" component="h2" sx={{ mt: 8, mb: 2 }}>
         Trending Tv Shows
       </Typography>
       <Grid container spacing={2}>
