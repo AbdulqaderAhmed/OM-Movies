@@ -9,7 +9,6 @@ export default function TrendingTvShows({ apikey }) {
 
   const fetchMovie = async () => {
     const res = await axios.get(urlTrendingTvShows);
-    console.log(res.data.results);
     setMovies(res.data.results);
   };
 
@@ -31,24 +30,26 @@ export default function TrendingTvShows({ apikey }) {
           autoplay={true}
           margin={12}
         >
-          {movies &&
-            movies.map((movie, index) => {
-              return (
-                <Grid item key={index}>
-                  <Card>
-                    <CardMedia
-                      component="img"
-                      image={
-                        "https://image.tmdb.org/t/p/w500" + movie.poster_path
-                      }
-                      alt={movie.title}
-                    />
-                  </Card>
-                </Grid>
-              );
-            })}
+          {movies
+            ? movies.map((movie, index) => {
+                return (
+                  <Grid item key={index}>
+                    <Card>
+                      <CardMedia
+                        component="img"
+                        image={
+                          "https://image.tmdb.org/t/p/w500" + movie.poster_path
+                        }
+                        alt={movie.title}
+                      />
+                    </Card>
+                  </Grid>
+                );
+              })
+            : null}
         </ReactOwlCarousel>
       </Grid>
+      {console.log("log")}
     </>
   );
 }
