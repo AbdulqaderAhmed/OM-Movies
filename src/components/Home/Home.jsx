@@ -59,7 +59,7 @@ export default function Home() {
       </Grid>
 
       {/* trending tv shows */}
-      <Typography variant="h5" component="h2" sx={{ mt: 8, mb: 2 }}>
+      <Typography variant="h5" component="h2" sx={{ mt: 4, mb: 2 }}>
         Trending Tv Shows
       </Typography>
       <Grid container spacing={2}>
