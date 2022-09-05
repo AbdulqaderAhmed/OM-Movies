@@ -64,9 +64,9 @@ export default function Header(props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            sx={{ flexGrow: 1, display: { xs: "block", sm: "block" } }}
           >
-            Ocean Of Game
+            Ocean Of Games
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
